@@ -2,13 +2,27 @@ import '../styles/globals.css';
 import 'semantic-ui-css/semantic.min.css';
 import Top from '../src/component/Top';
 import Footer from '../src/component/Footer';
+import { InputCom } from '../componentTest/InputCom/InputCom';
+import { Check } from '../componentTest/InputCom/Check';
+import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps }) {
   // Component = 현재 페이지
   // pageProps = 서버사이드렌더링할 때..초기객체?
+
+  const widthTest = '300px';
+  const heightTest = '100px';
+  const boo = false;
+  const [bo, setBo] = useState(false);
+
+  console.log(bo)
+
+
   return (
   <div>
     <Top/>
+    <InputCom widthTest = {widthTest} heightTest = {heightTest} boo = {boo}/>
+    <Check bo = { bo } setBo = {setBo}/>
     <Component {...pageProps} />
     <Footer/>
   </div>
